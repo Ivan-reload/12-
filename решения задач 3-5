@@ -1,0 +1,38 @@
+for N in range(1000):
+ R = bin(N)[2:]
+ if sum(map(int, list(R))) % 2 == 0:
+  R = R + "0"
+  R = "10" + R[2:]
+ else:
+  R = R + "1"
+  R = "11" + R[2:]
+ if int(R, 2) > 40:
+  print(N)
+  break
+
+
+
+
+for N in range(1000):
+ R = bin(N)[2:]
+ if sum(map(int, list(R))) % 2 == 0:
+  R = "1" + R
+  R = R[:-2] + "10"
+ else:
+  R = R + "1"
+  R = "10" + R[2:]
+ if int(R, 2) > 202:
+  print(N)
+  break
+
+
+
+for N in range(1000):
+ R = bin(N)[2:]
+ if N % 2 == 0:
+  R = "10" + R
+ else:
+  R = "1" + R
+  R = R + "01"
+ if int(R, 2) < 30:
+  print(N)

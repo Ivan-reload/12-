@@ -1,0 +1,19 @@
+def f(num):
+    res = ""
+    while num:
+        res += str(num % 7)
+        num //= 7
+    return res[::-1]
+
+
+l = []
+for N in range(10000):
+    R = f(N)
+    if sum(map(int, R)) % 2 == 0:
+        R += "555"
+    else:
+        R = "33" + R + "6"
+    if int(R, 7) < 12717:
+        l.append(N)
+
+print(max(l))

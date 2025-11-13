@@ -1,0 +1,13 @@
+l = []
+for N in range(10000):
+    R = oct(N)[2:]
+    if (str(N).count("0") + str(N).count("2") + str(N).count("4") + str(N).count("6") + str(N).count("8")) % 2 == 1:
+        R = R[-3:] + "46"
+    else:
+        k = (N % 8) * 5
+        k = oct(k)[2:]
+        R = k + R
+    if N >= 80:
+        l.append(int(R, 8))
+
+print(min(l))

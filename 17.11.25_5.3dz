@@ -1,0 +1,16 @@
+l = []
+def f(num):
+    rez = ""
+    while num:
+        rez += str(num % 3)
+        num //= 3
+    return rez[::-1]
+for N in range(11, 10000):
+    R = f(N)
+    if R.count("0") + R.count("2") > R.count("1"):
+        R = "22" + R
+    else:
+        R = "11" + R
+    if int(R, 3) > 100:
+        l.append(int(R, 3))
+print(min(l))

@@ -1,0 +1,17 @@
+l = []
+def f(num):
+    rez = ""
+    while num:
+        rez += str(num % 3)
+        num //= 3
+    return rez[::-1]
+for N in range(1, 10000):
+    R = f(N)
+    if N % 3 == 0:
+        R = R + R[-2:]
+    else:
+        k = f(sum(map(int, R)))
+        R = R + k
+    if int(R, 3) > 220 and int(R, 3) % 2 == 0:
+        l.append(int(R, 3))
+print(min(l))
